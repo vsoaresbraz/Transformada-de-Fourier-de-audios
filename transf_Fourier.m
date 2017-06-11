@@ -1,8 +1,6 @@
-%% Parte 1: Limpando o workspace e ajustando os parametros para o plot
-%do espectro
+%% Parte 1: Limpando o workspace e ajustando os parametros para o plot do espectro
 opengl software;    
-%clear;
-clc;
+clear;clc;
 
 N=10000;            %numero de amostras
 T=3;                %tempo do intervalo
@@ -12,7 +10,7 @@ t=t*T;              %tempo em segundos
 %% Parte 2: Escolhendo o sinal a ser plotado e fazendo os ajustes necessarios
 x=audioread('Letra I.wav'); %vogal escolhida           
 
-X=abs(fft(x)/(N/2));        %escolhendo somente a parte real da funçao
+X=abs(fft(x)/(N/2));        %escolhendo somente a parte real da funÃ§ao
 X=X(1:N/2).^2;              %pegando somente a parte positiva da transf.
 f=(0:N/2-1)/T;
 %% Parte 3: Plotando o espectro e setando as legendas e titulo
@@ -25,7 +23,7 @@ grid;
 figure;
 plot(f,X);
 ylabel('Energia');
-xlabel('Frequência');
+xlabel('FrequÃªncia');
 title('Transformada de Fourier');
 axis([0 600 0 1.5]);   
 grid;
